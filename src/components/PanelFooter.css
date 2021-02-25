@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+
+.responses {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin-top: 00.5rem;
+}
+
+.responses p {
+  margin-left: 0.5rem;
+  margin-top: 9px;
+}

@@ -1,23 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+import React, {useState, useEffect} from 'react';
+import ThreadList from './components/ThreadlList';
 
 function App() {
+
+  const[threads, setThreads] = useState([]);
+  const[subReddit, setSubreddit] = useState('webdev');
+
+  useEffect(() => {
+    fetch(`https://www.reddit.com/r/${subReddit}.json`)
+    .then(res => {
+      if(res.status !==200){
+        console.log('error');
+        return;
+      }
+      res.json().then(data => {
+        if(data!=null){
+          setThreads(data.data.children);
+        }
+      })
+    })
+  }, [subReddit]);
+
+ 
+    
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {console.log(threads)}
+      <NavBar />
+      <ThreadList threads={threads}/>
     </div>
   );
 }
