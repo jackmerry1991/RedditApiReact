@@ -1,15 +1,16 @@
 import React from 'react';
 import {BiUpvote, BiDownvote} from 'react-icons/bi';
 import { IconContext } from "react-icons";
+import './SidePanel.css';
 
 const SidePanel = (props) => {
     
     return (
         <div className="votesContainer">
-            <IconContext.Provider value={{className: "global-class-name", size: '25px' }}>
-            <BiUpvote value={{size: '50px'}} />
+            <IconContext.Provider value={{className: "global-class-name", size: '2rem' }}>
+            <BiUpvote value={{size: '100px'}} />
             <p>{props.votes}</p>
-            <BiDownvote value={{size: '50px'}}/>
+            <BiDownvote value={{size: '100px'}}/>
             </IconContext.Provider>
         </div>
     )

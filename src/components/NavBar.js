@@ -13,6 +13,14 @@ const NavBar = (props) => {
                 </div>
                 <h1 className="firstWord">Reddit</h1><h1 className="secondWord">Lite</h1>
             </nav>
+            {/* <select> */}
+                {/* { */}
+                     {/* props.subReddits.map(subReddit => { */}
+                        {/* return <option value={subReddit}>{subReddit}</option> */}
+                     {/* }) */}
+                {/* } */}
+                    
+            {/* </select> */}
         </div>
     )
         

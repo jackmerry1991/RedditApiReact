@@ -2,16 +2,28 @@
   display: flex;
   justify-content: space-between;
   margin-right: 1rem;
+  padding-bottom: 1rem;
+  max-height: 70px;
+  min-height: 70px;
+  font-family: "Roboto";
 }
 
 .responses {
   display: flex;
   align-items: center;
   align-content: center;
-  margin-top: 00.5rem;
+  margin-top: 0.5rem;
 }
 
 .responses p {
   margin-left: 0.5rem;
   margin-top: 9px;
+}
+
+.posterName {
+  font-style: italic;
+}
+
+.poster {
+  display: flex;
 }

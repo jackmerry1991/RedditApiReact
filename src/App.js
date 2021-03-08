@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
 import React, {useState, useEffect} from 'react';
@@ -7,7 +6,22 @@ import ThreadList from './components/ThreadlList';
 function App() {
 
   const[threads, setThreads] = useState([]);
-  const[subReddit, setSubreddit] = useState('webdev');
+  const[subReddit, setSubreddit] = useState('rupaulsdragrace');
+  const[allSubs, setAllSubs] = useState('');
+
+  useEffect(() => {
+    fetch('https://www.reddit.com/r/subreddits/.json')
+    .then(res=> {
+      if(res.status !==200){
+        console.log('Error fetching list of subreddits');
+        return;
+      }
+      res.json().then(data => {
+        console.log(Array.isArray(data.data.children));
+        setAllSubs(data.data.children);
+      })
+    })
+  }, []);
 
   useEffect(() => {
     fetch(`https://www.reddit.com/r/${subReddit}.json`)
@@ -24,13 +38,9 @@ function App() {
     })
   }, [subReddit]);
 
- 
-    
-  
   return (
     <div className="App">
-      {console.log(threads)}
-      <NavBar />
+      <NavBar subReddits={allSubs}/>
       <ThreadList threads={threads}/>
     </div>
   );
