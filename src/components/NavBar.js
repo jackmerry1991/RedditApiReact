@@ -4,7 +4,7 @@ import logo from '../images/newLogo.png';
 import './NavBar.css';
 
 const NavBar = (props) => {
-
+   
     return(
         <div className="navBarDiv">
             <nav>
@@ -12,15 +12,18 @@ const NavBar = (props) => {
                     <img src={logo} alt="logo"></img>
                 </div>
                 <h1 className="firstWord">Reddit</h1><h1 className="secondWord">Lite</h1>
-            </nav>
-            {/* <select> */}
-                {/* { */}
-                     {/* props.subReddits.map(subReddit => { */}
-                        {/* return <option value={subReddit}>{subReddit}</option> */}
-                     {/* }) */}
-                {/* } */}
+                <select>
+                {
+                      props.subReddits.map((subReddit, i) => {
+                        return (<option id={i}>{subReddit.data.display_name}</option>)
+                    })
+                }
+                
+                
                     
-            {/* </select> */}
+             </select>
+            </nav>
+            
         </div>
     )
         

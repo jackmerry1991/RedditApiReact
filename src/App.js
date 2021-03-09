@@ -7,10 +7,10 @@ function App() {
 
   const[threads, setThreads] = useState([]);
   const[subReddit, setSubreddit] = useState('rupaulsdragrace');
-  const[allSubs, setAllSubs] = useState('');
+  const[allSubs, setAllSubs] = useState([]);
 
   useEffect(() => {
-    fetch('https://www.reddit.com/r/subreddits/.json')
+    fetch('https://www.reddit.com/subreddits.json')
     .then(res=> {
       if(res.status !==200){
         console.log('Error fetching list of subreddits');
@@ -40,6 +40,8 @@ function App() {
 
   return (
     <div className="App">
+      {console.log(`In render ${typeof allSubs}`)}
+      {console.log(`In render 2: ${allSubs}`)}
       <NavBar subReddits={allSubs}/>
       <ThreadList threads={threads}/>
     </div>
