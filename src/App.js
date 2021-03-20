@@ -6,7 +6,7 @@ import ThreadList from './components/ThreadlList';
 function App() {
 
   const[threads, setThreads] = useState([]);
-  const[subReddit, setSubreddit] = useState('rupaulsdragrace');
+  const[subReddit, setSubreddit] = useState('all');
   const[allSubs, setAllSubs] = useState([]);
 
   useEffect(() => {
@@ -42,8 +42,8 @@ function App() {
     <div className="App">
       {console.log(`In render ${typeof allSubs}`)}
       {console.log(`In render 2: ${allSubs}`)}
-      <NavBar subReddits={allSubs}/>
-      <ThreadList threads={threads}/>
+      <NavBar />
+      <ThreadList threads={threads} subReddits={allSubs} setSubreddit={setSubreddit}/>
     </div>
   );
 }

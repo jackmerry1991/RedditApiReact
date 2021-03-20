@@ -1,0 +1,20 @@
+.mainPage {
+  display: flex;
+  justify-content: center;
+}
+
+.subList {
+  display: flex;
+  justify-content: right;
+}
+
+#threadList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button {
+  max-width: 100px;
+  min-width: 300px;
+}

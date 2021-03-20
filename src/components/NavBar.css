@@ -3,6 +3,9 @@
   background-color: rgb(255, 255, 255);
   width: 100%;
   margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  border-bottom: grey 2px solid;
 }
 
 .navBarDiv img {
@@ -20,7 +23,6 @@ nav {
   align-content: center;
   align-items: center;
   width: 100%;
-  border-bottom: grey 2px solid;
 }
 
 h1 {
@@ -33,4 +35,23 @@ h1 {
 
 .secondWord {
   color: grey;
+}
+
+.subList {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(129, 129, 129);
+  width: 100%;
+  min-width: 100%;
+  white-space: nowrap;
+  text-align: center;
+  font-size: large;
+}
+
+.subList {
+  margin-right: 5rem;
 }

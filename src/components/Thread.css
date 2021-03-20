@@ -8,6 +8,7 @@
   grid-template-columns: 0.5fr 2fr 1fr;
   grid-template-rows: 0.5fr 2fr 0.3fr;
   row-gap: 0;
+  align-self: center;
 }
 
 /*.centralThreadContainer {
