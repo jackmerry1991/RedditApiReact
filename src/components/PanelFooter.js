@@ -27,13 +27,13 @@ const PanelFooter = (props) => {
         diffInSeconds -= minutes * 60;
 
         if(diffInDays){
-            return diffInDays;
+            return diffInDays > 1 ? `${diffInDays} days ago` : `${diffInDays} day ago`;
         }else if(hours){
-            return hours;
+            return hours > 1 ? `${hours} hours ago` : `${hours} hour ago`;
         }else if(minutes){
-            return minutes;
+            return minutes > 1 ? `${minutes} minutes ago` : `${minutes} minute ago`;
         }else{
-            return 'Less than a minute '
+        return 'Less than a minute '
         }
     }
 
@@ -43,7 +43,7 @@ const PanelFooter = (props) => {
             <div className="poster">
                 <p>Posted by &nbsp;</p> <p className="posterName">{`${props.poster}`}</p>
             </div>
-            <p>{timeSincePost(date)} hours ago</p>
+            <p>{timeSincePost(date)}</p>
             <div className="responses">
             <IconContext.Provider value={{className: "global-class-name", size: '25px' }}>
             <GoComment />

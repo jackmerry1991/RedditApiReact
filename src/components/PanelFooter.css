@@ -1,11 +1,13 @@
 .footer {
   display: flex;
   justify-content: space-between;
+  margin-left: 1rem;
   margin-right: 1rem;
   padding-bottom: 1rem;
   max-height: 70px;
   min-height: 70px;
   font-family: "Roboto";
+  align-items: center;
 }
 
 .responses {
@@ -22,6 +24,7 @@
 
 .posterName {
   font-style: italic;
+  color: rgb(37, 37, 241);
 }
 
 .poster {

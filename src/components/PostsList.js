@@ -1,0 +1,62 @@
+import React, {useState, useEffect} from 'react';
+import { IconContext } from "react-icons";
+import {IoArrowBackSharp} from 'react-icons/io5';
+import {Link} from 'react-router-dom';
+import {getPosts} from '../util/api'
+import './Posts.css';
+import Post from './Post.js';
+import OriginalPost from './OriginalPost';
+
+const PostsList = (props) => {
+
+    const[posts, setPosts] = useState([]);
+    const[originalPost, setOriginalPost] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const returnedData = await getPosts(props.permaLink);
+            console.log(returnedData);
+            const postsData = returnedData[returnedData.length-1];
+             setPosts(postsData.data.children);
+           };
+        
+           fetchData();
+    }, [props.permaLink])
+
+    // useEffect(() => {
+    //     const fetchOP = async () => {
+    //         const returnedData = await getPosts(props.permaLink);
+    //         console.log(returnedData);            
+    //          setOriginalPost(returnedData.shift().data.children);
+    //        };
+    //        console.log(`originalPost=${originalPost}`);
+
+    //        fetchOP();
+    // }, [props.permaLink])
+
+
+//TODO IMPLEMENT COMMENTS USING COMMENTS TO CREATE BRANCH OF POSTS RESPONDING TO EACH POST
+    return (
+        <div className="mainDiv">
+              <div className="heading" id="header">
+            <Link to="/home">
+                <IconContext.Provider value={{className: "global-class-name", size: '4rem' }}>
+                <IoArrowBackSharp />
+                </IconContext.Provider>
+            </Link>
+        </div>
+        <div className="postsList">
+        <OriginalPost heading={props.heading} votes={props.votes} author={props.author} image={props.image} time={props.time} responses={props.responses}/>
+            { posts.map((post)=> {
+                let date = new Date(0);
+                date.setUTCSeconds(post.data.created_utc);
+                return (
+                <Post body={post.data.body} author={post.data.author} time={post.data.created_utc} upVotes={post.data.ups} downVotes={post.data.downs}/>
+                )
+            })}
+        </div>
+        </div>
+    )
+}
+
+export default PostsList;

@@ -1,0 +1,90 @@
+#header {
+  width: 100%;
+  display: flex;
+  align-self: flex-start;
+  margin-left: 2rem;
+}
+
+.postsList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: center;
+  align-self: center;
+}
+
+.postContainer {
+  padding-top: 10px;
+  background-color: white;
+  box-shadow: 2px 2px #c2bfbf;
+  width: 50%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0;
+  align-self: center;
+  margin-bottom: 10px;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
+}
+
+.originalPost {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-content: center;
+  align-self: center;
+}
+
+.preview {
+  padding-bottom: 1rem;
+  border-bottom: rgb(139, 138, 138) solid 1px;
+  text-align: left;
+  word-wrap: break-word;
+  align-self: flex-end;
+}
+
+.preview img {
+  padding-bottom: 1rem;
+  width: 100%;
+  height: auto;
+  align-items: flex-end;
+}
+
+.postBody p {
+  text-align: justify;
+  font-family: "Roboto";
+  word-wrap: break-word;
+  font-size: 1.25rem;
+  margin: 15px 15px;
+}
+
+.postFooter {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+
+.userName {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+
+.postTime {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+}
+
+.votes {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
