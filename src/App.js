@@ -7,7 +7,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
 import log from 'loglevel';
@@ -31,6 +32,9 @@ function App() {
         {console.log(`In render 2: ${allSubs}`)}
         <NavBar />
         <Switch>
+          <Route exact path ="/">
+            <Redirect to ="/home"/>
+          </Route>
           <Route exact path="/home" 
           render={(props)=> (
             <ThreadList {...props} setLink={setLink} />

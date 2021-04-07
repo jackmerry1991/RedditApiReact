@@ -13,7 +13,7 @@ const OriginalPost = (props) => {
     }
 
     return(
-        <div className="mainPanel">
+        <div className="mainPanel" id="originalPostPanel">
                 <h1>{props.heading}</h1>
             <div className="panelCenter">
                 <div className="leftPanel">

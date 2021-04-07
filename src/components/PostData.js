@@ -52,9 +52,9 @@ const PostData = (props) => {
         <div className="postFooter">
             <div className="userName">
                 <p>{props.author}</p>
-                <div className="postTime">
-                    <p>{calculateTime(props.time)}</p>
                 </div>
+            <div className="postTime">
+                <p>{calculateTime(props.time)}</p>
             </div>
             <div className="votes">
                 <IconContext.Provider value={{className: "global-class-name", size: '25px' }}>

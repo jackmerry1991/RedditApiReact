@@ -41,11 +41,11 @@ const PanelFooter = (props) => {
     return (
         <div className="footer">
             <div className="poster">
-                <p>Posted by &nbsp;</p> <p className="posterName">{`${props.poster}`}</p>
+                <p className="mainText">Posted by &nbsp;</p> <p className="posterName">{`${props.poster}`}</p>
             </div>
-            <p>{timeSincePost(date)}</p>
+            <p className="mainText">{timeSincePost(date)}</p>
             <div className="responses">
-            <IconContext.Provider value={{className: "global-class-name", size: '25px' }}>
+            <IconContext.Provider value={{className: "mainText", size: '25px' }}>
             <GoComment />
             <p>{props.responses}</p>
             </IconContext.Provider>

@@ -31,6 +31,10 @@ const ThreadList = (props) => {
      
         fetchData();
       }, [subReddit]);
+
+   const setSub = (sub) => {
+       setSubreddit(sub);
+   }
     
 
    const[isOpen, setIsOpen] = useState(false);
@@ -58,7 +62,7 @@ const ThreadList = (props) => {
             </div>
             <div className="subList" id="subsMenu">
                 <button onClick={openCloseMenu}>View Sub Reddits</button>
-                {isOpen ? <SubList subReddits={allSubs} setSubreddit={props.setSubreddit}/> : ''}
+                {isOpen ? <SubList subReddits={allSubs} setSubreddit={setSub}/> : ''}
             </div>
         </div>
             

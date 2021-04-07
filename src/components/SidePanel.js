@@ -7,7 +7,7 @@ const SidePanel = (props) => {
     
     return (
         <div className="votesContainer">
-            <IconContext.Provider value={{className: "global-class-name", size: '2rem' }}>
+            <IconContext.Provider value={{className: "keySymbol", size: '2rem' }}>
             <BiUpvote value={{size: '100px'}} />
             <p>{props.votes}</p>
             <BiDownvote value={{size: '100px'}}/>
