@@ -1,3 +1,12 @@
+.mainDiv {
+  margin-top: 150px;
+}
+
+.homeLink {
+  text-decoration: none;
+  color: #f76606;
+}
+
 #header {
   width: 100%;
   display: flex;
@@ -95,4 +104,16 @@
 #originalPostPanel {
   width: 70%;
   height: 50%;
+}
+
+@media screen and (max-width: 490px) {
+  .postFooter {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .postFooter {
+    flex-direction: column;
+  }
 }

@@ -39,7 +39,7 @@ const PostsList = (props) => {
     return (
         <div className="mainDiv">
               <div className="heading" id="header">
-            <Link to="/home">
+            <Link className="homeLink" to="/home">
                 <IconContext.Provider value={{className: "global-class-name", size: '4rem' }}>
                 <IoArrowBackSharp />
                 </IconContext.Provider>
