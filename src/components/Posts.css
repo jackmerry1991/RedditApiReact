@@ -35,6 +35,10 @@
   box-shadow: 4px 4px #f76606;
 }
 
+.loader {
+  color: aliceblue;
+}
+
 @font-face {
   font-family: "Roboto", sans-serif;
   src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");

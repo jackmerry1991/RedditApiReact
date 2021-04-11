@@ -6,11 +6,15 @@ import {getPosts} from '../util/api'
 import './Posts.css';
 import Post from './Post.js';
 import OriginalPost from './OriginalPost';
+import Loading from "./Loading.js"
+
+
 
 const PostsList = (props) => {
 
     const[posts, setPosts] = useState([]);
     const[originalPost, setOriginalPost] = useState([]);
+    const[fetchInProgress, setFetchInProgress] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -18,10 +22,18 @@ const PostsList = (props) => {
             console.log(returnedData);
             const postsData = returnedData[returnedData.length-1];
              setPosts(postsData.data.children);
+             setFetchInProgress(false);
            };
-        
            fetchData();
-    }, [props.permaLink])
+    }, [props.permaLink]);
+
+    const loader = () => {
+        let message = 'Loading ';
+        setInterval(() => {
+            return message.concat('.')
+        }, 100)
+        return message;
+    }
 
     // useEffect(() => {
     //     const fetchOP = async () => {
@@ -46,7 +58,8 @@ const PostsList = (props) => {
             </Link>
         </div>
         <div className="postsList">
-        <OriginalPost heading={props.heading} votes={props.votes} author={props.author} image={props.image} time={props.time} responses={props.responses}/>
+            {fetchInProgress ? <Loading /> :
+        <OriginalPost heading={props.heading} votes={props.votes} author={props.author} image={props.image} time={props.time} responses={props.responses}/>}
             { posts.map((post)=> {
                 let date = new Date(0);
                 date.setUTCSeconds(post.data.created_utc);
@@ -54,6 +67,7 @@ const PostsList = (props) => {
                 <Post body={post.data.body} author={post.data.author} time={post.data.created_utc} upVotes={post.data.ups} downVotes={post.data.downs}/>
                 )
             })}
+            
         </div>
         </div>
     )
