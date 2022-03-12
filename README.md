@@ -3,7 +3,7 @@
 ## Table of Contents
   * [About the Project](#about-the-project)
   * [Built With](#built-with)
-  * [Set-up](#setup)
+  * [Set-up](#set-up)
 
   ## About the Project
   This project uses React to render sub-reddits and their content from the popular site Reddit. 
@@ -15,7 +15,7 @@
   This project is created with:
   * [ReactJs](#https://reactjs.org/)
 
-  ##Set-up
+  ## Set-up
   1. Install the application's node dependencies.
     `npm install`
 
