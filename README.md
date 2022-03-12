@@ -1,9 +1,9 @@
 # RedditLite - Using React to Render data from a Reddit
 
 ## Table of Contents
-  [About the Project](#about-the-project)
-  [Built With](#built-with)
-  [Set-up](#setup)
+  * [About the Project](#about-the-project)
+  * [Built With](#built-with)
+  * [Set-up](#setup)
 
   ## About the Project
   This project uses React to render sub-reddits and their content from the popular site Reddit. 
